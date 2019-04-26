@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/products/category/{id}', 'HomeController@productsInCategory')->name('home.products.category');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('category', 'CategoryController')->parameters([
+    'category' => 'id'
+]);
+
+Route::resource('product', 'ProductController')->parameters([
+    'product' => 'id'
+]);
