@@ -16,7 +16,7 @@
                             </ul>
                         @endif
                         <ul>
-                            <form method="post" action="{{ route('product.update', $product->id) }}">
+                            <form method="post" action="{{ route('products.update', $product->id) }}">
                                 @method('PATCH')
                                 @csrf
                                 <div class="form-group">
@@ -26,6 +26,9 @@
 
                                     <label for="price">Price:</label>
                                     <input type="text" class="form-control" name="price" value={{ $product->price }} />
+
+                                    <label for="quantity">Quantity:</label>
+                                    <input type="text" class="form-control" name="quantity" value={{ $product->quantity }} />
 
                                     <label for="categories">Categories:</label><br>
                                     @foreach($categories as $category)

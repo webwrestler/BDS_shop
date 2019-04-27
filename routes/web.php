@@ -16,10 +16,10 @@ Route::get('/products/category/{id}', 'HomeController@productsInCategory')->name
 
 Auth::routes();
 
-Route::resource('category', 'CategoryController')->parameters([
-    'category' => 'id'
+Route::resource('categories', 'CategoryController')->parameters([
+    'categories' => 'id'
 ]);
 
-Route::resource('product', 'ProductController')->parameters([
-    'product' => 'id'
+Route::resource('products', 'ProductController')->parameters([
+    'products' => 'id'
 ]);

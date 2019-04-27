@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(3);
+        $products = Product::paginate(9);
         $categories = Category::all();
         return view('index', ['products' => $products, 'categories' => $categories]);
     }
@@ -28,8 +28,8 @@ class HomeController extends Controller
      */
     public function productsInCategory($id)
     {
-        $products = Category::find($id)->products()->paginate(3);
+        $products = Category::find($id)->products()->paginate(9);
         $categories = Category::all();
-        return view('index', ['products' => $products, 'categories' => $categories, 'idActiveCategory' => $id]);
+        return view('index', ['products' => $products, 'categories' => $categories]);
     }
 }

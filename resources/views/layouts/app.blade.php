@@ -71,8 +71,8 @@
                         @else
                         <ul class="nav navbar-nav">
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="/category">Categories</a></li>
-                            <li><a href="/product">Products</a></li>
+                            <li><a href="{{ route('categories.index') }}">Categories</a></li>
+                            <li><a href="{{ route('products.index') }}">Products</a></li>
                             <li><a href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

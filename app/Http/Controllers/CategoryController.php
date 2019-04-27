@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidationCategory;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category.index', ['categories' => Category::all()]);
+        return view('categories.index', ['categories' => Category::all()]);
     }
 
     /**
@@ -34,7 +35,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('categories.create');
     }
 
     /**
@@ -43,16 +44,13 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationCategory $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:31',
-        ]);
-
+        $request->validated();
         $category = new Category();
         $category->title = $request->get('title');
         $category->save();
-        return view('category.index', ['categories' => Category::all()]);
+        return view('categories.index', ['categories' => Category::all()]);
     }
 
     /**
@@ -75,7 +73,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('category.edit', ['category'=> $category]);
+        return view('categories.edit', ['category'=> $category]);
     }
 
     /**
@@ -85,16 +83,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidationCategory $request, $id)
     {
-        $request->validate([
-            'title' => 'required|string|max:31',
-        ]);
-
+        $request->validated();
         $category = Category::find($id);
         $category->title = $request->get('title');
         $category->save();
-        return view('category.index', ['categories' => Category::all()]);
+        return view('categories.index', ['categories' => Category::all()]);
     }
 
     /**
@@ -108,6 +103,6 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
 
-        return redirect('/category')->with('status', 'Stock has been deleted Successfully');
+        return redirect('/categories')->with('status', 'Stock has been deleted Successfully');
     }
 }

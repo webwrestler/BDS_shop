@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidationProduct;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.index', ['products' => Product::all()]);
+        return view('products.index', ['products' => Product::all()]);
     }
 
     /**
@@ -35,7 +36,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create', ['categories' => Category::all()]);
+        return view('products.create', ['categories' => Category::all()]);
     }
 
     /**
@@ -44,21 +45,18 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationProduct $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:31',
-            'price' => 'required|integer|max:31',
-        ]);
-
+        $request->validated();
         $product = new Product();
         $product->name = $request->get('name');
         $product->price = $request->get('price');
+        $product->quantity = $request->get('quantity');
         $product->save();
 
         $product->categories()->attach($request->get('categories'));
 
-        return view('product.index', ['products' => Product::all()]);
+        return view('products.index', ['products' => Product::all()]);
     }
 
     /**
@@ -70,7 +68,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('product.show', ['product'=> $product]);
+        return view('products.show', ['product'=> $product]);
     }
 
     /**
@@ -82,7 +80,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('product.edit', ['product'=> $product, 'categories' => Category::all()]);
+        return view('products.edit', ['product'=> $product, 'categories' => Category::all()]);
     }
 
     /**
@@ -92,22 +90,20 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidationProduct $request, $id)
     {
-        $request->validate([
-            'name' => 'required|string|max:31',
-            'price' => 'required|integer|max:31',
-        ]);
-
+        $request->validated();
         $product = Product::find($id);
         $product->name = $request->get('name');
+        $product->price = $request->get('price');
+        $product->quantity = $request->get('quantity');
         $product->save();
 
         $product->categories()->detach();
 
         $product->categories()->attach($request->input('categories'));
 
-        return redirect()->route('product.show', $product);
+        return redirect()->route('products.index', $product);
     }
 
     /**
@@ -122,6 +118,6 @@ class ProductController extends Controller
         $product->categories()->detach();
         $product->delete();
 
-        return redirect('/product')->with('status', 'Stock has been deleted Successfully');
+        return redirect('/products')->with('status', 'Stock has been deleted Successfully');
     }
 }

@@ -5,8 +5,15 @@
             <div class="table-responsive cart_info">
                 <table class="table table-condensed">
                     <tbody>
+                            @if ($errors->any())
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
                         <tr>
-                            <form method="post" action="{{ route('category.update', $category->id) }}">
+                            <form method="post" action="{{ route('categories.update', $category->id) }}">
                             @method('PATCH')
                             @csrf
                             <div class="form-group">

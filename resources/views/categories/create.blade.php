@@ -16,18 +16,11 @@
                             </ul>
                         @endif
                         <ul>
-                            <form method="post" action="{{ route('product.store') }}">
+                            <form method="post" action="{{ route('categories.store') }}">
                                 <div class="form-group">
                                     @csrf
-                                    <label for="name">Name:</label>
-                                    <input type="text" class="form-control" name="name"/>
-                                    <label for="price">Price:</label>
-                                    <input type="text" class="form-control" name="price"/>
-                                    <label for="categories">Categories:</label><br>
-                                    @foreach($categories as $category)
-                                        <input type="checkbox" name="categories[]" value="{{ $category->id }}"/>
-                                        <label for="name">{{ $category->title }}</label>
-                                    @endforeach
+                                    <label for="title">Title:</label>
+                                    <input type="text" class="form-control" name="title"/>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Add</button>
                             </form>
