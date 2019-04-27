@@ -47,9 +47,10 @@ class CategoryController extends Controller
     public function store(ValidationCategory $request)
     {
         $request->validated();
-        $category = new Category();
-        $category->title = $request->get('title');
+
+        $category = Category(['title' => $request->get('title')]);
         $category->save();
+
         return view('categories.index', ['categories' => Category::all()]);
     }
 
@@ -73,6 +74,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
+
         return view('categories.edit', ['category'=> $category]);
     }
 
@@ -86,9 +88,10 @@ class CategoryController extends Controller
     public function update(ValidationCategory $request, $id)
     {
         $request->validated();
+
         $category = Category::find($id);
-        $category->title = $request->get('title');
-        $category->save();
+        $category->update(['title' => $request->get('title')]);
+
         return view('categories.index', ['categories' => Category::all()]);
     }
 

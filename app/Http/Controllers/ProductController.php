@@ -48,12 +48,13 @@ class ProductController extends Controller
     public function store(ValidationProduct $request)
     {
         $request->validated();
-        $product = new Product();
-        $product->name = $request->get('name');
-        $product->price = $request->get('price');
-        $product->quantity = $request->get('quantity');
-        $product->save();
 
+        $product = new Product([
+            'name' => $request->get('name'),
+            'price' => $request->get('price'),
+            'quantity' => $request->get('quantity'),
+        ]);
+        $product->save();
         $product->categories()->attach($request->get('categories'));
 
         return view('products.index', ['products' => Product::all()]);
@@ -68,6 +69,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
+
         return view('products.show', ['product'=> $product]);
     }
 
@@ -80,6 +82,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
+
         return view('products.edit', ['product'=> $product, 'categories' => Category::all()]);
     }
 
@@ -93,15 +96,14 @@ class ProductController extends Controller
     public function update(ValidationProduct $request, $id)
     {
         $request->validated();
+
         $product = Product::find($id);
-        $product->name = $request->get('name');
-        $product->price = $request->get('price');
-        $product->quantity = $request->get('quantity');
-        $product->save();
-
-        $product->categories()->detach();
-
-        $product->categories()->attach($request->input('categories'));
+        $product->update([
+            'name' => $request->get('name'),
+            'price' => $request->get('price'),
+            'quantity' => $request->get('quantity'),
+        ]);
+        $product->categories()->sync($request->input('categories'));
 
         return redirect()->route('products.index', $product);
     }

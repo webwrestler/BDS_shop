@@ -15,22 +15,22 @@
 								  <!-- Wrapper for slides -->
 								    <div class="carousel-inner">
 										<div class="item active">
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
 										</div>
 										<div class="item">
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
 										</div>
 										<div class="item">
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/product-mini.png')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
 										</div>
 										
 									</div>
@@ -47,9 +47,9 @@
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
-								<img src="{{asset('images/product-details/new.jpg')}}" class="newarrival" alt="" />
+								<img src="{{asset('images/product-details/bag1.jpeg')}}" class="newarrival" alt="" />
 								<h2>{{$product->name}}</h2>
-								<img src="{{asset('images/product-details/rating.png')}}" alt="" />
+								<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 								<span>
 									<span>US ${{$product->price}}</span>
 									<label>Quantity:</label>

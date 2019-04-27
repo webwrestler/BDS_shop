@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Category;
+use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        factory(Category::class, 7)->create();
+
+        $categories = Category::all();
+
+        factory(Product::class, 31)
+            ->create()
+            ->each(function ($product) use($categories) {
+                $product->categories()->saveMany($categories);
+            });
     }
 }
