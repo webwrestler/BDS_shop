@@ -8,29 +8,29 @@
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="{{asset('images/product-details/product.png')}}" alt="" />
+								<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
 								
 								  <!-- Wrapper for slides -->
 								    <div class="carousel-inner">
 										<div class="item active">
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
 										</div>
 										<div class="item">
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
 										</div>
 										<div class="item">
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
-										  <a href=""><img src="{{asset('images/product-details/bag1.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
+										  <a href=""><img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt=""></a>
 										</div>
 										
 									</div>
@@ -47,9 +47,8 @@
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
-								<img src="{{asset('images/product-details/bag1.jpeg')}}" class="newarrival" alt="" />
 								<h2>{{$product->name}}</h2>
-								<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
+								<img src="{{asset('images/product-details/bag-mini.jpeg')}}" alt="" />
 								<span>
 									<span>US ${{$product->price}}</span>
 									<label>Quantity:</label>
@@ -75,7 +74,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{asset('images/product-details/product-mini.png')}}" alt="" />
+													<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 													<h2>$56</h2>
 													<p>Easy Polo Black Edition</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
@@ -87,7 +86,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{asset('images/product-details/product-mini.png')}}" alt="" />
+													<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 													<h2>$56</h2>
 													<p>Easy Polo Black Edition</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
@@ -99,7 +98,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{asset('images/product-details/product-mini.png')}}" alt="" />
+													<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 													<h2>$56</h2>
 													<p>Easy Polo Black Edition</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
@@ -113,7 +112,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{asset('images/product-details/product-mini.png')}}" alt="" />
+													<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 													<h2>$56</h2>
 													<p>Easy Polo Black Edition</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
@@ -125,7 +124,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{asset('images/product-details/product-mini.png')}}" alt="" />
+													<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 													<h2>$56</h2>
 													<p>Easy Polo Black Edition</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
@@ -137,7 +136,7 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{asset('images/product-details/product-mini.png')}}" alt="" />
+													<img src="{{asset('images/product-details/bag1.jpeg')}}" alt="" />
 													<h2>$56</h2>
 													<p>Easy Polo Black Edition</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
